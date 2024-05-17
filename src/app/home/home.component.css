@@ -1,49 +1,87 @@
-html, body {
+html,body {
     margin: 0;
     padding: 0;
-    height: 100%;
+    height: 100vh;
     width: 100%;
+    /* background-color:rgb(167, 161, 161); */
+
 }
-
-
 
 .traffic-signal-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-}
-.system-name {
-    text-align: center;
-    margin-bottom: 20px; 
 }
 
-.traffic-lights-row {
-    display: flex;
-    gap: 50px; /* Adjust as needed */
+.system-name {
+    text-align: center;
+    margin-top: 70px;
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.intersection {
+    position: relative;
+    width: 800px;
+    height: 550px;
+    background-color: #333;
+}
+
+.road {
+    position: absolute;
+    background-color: #777;
+}
+
+.vertical-road {
+    width: 60px;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.horizontal-road {
+    width: 100%;
+    height: 60px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .traffic-signal {
-    width: 100px;
-    height: 300px;
+    width: 80px;
+    height: 200px;
     background-color: #333;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    border: 2px solid #777;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    position: absolute;
+}
+
+.traffic-signal-1 {
+    top: 20px; 
+    left: calc(50% - 110px); 
+}
+
+.traffic-signal-2 {
+    top: 100px; 
+    left: calc(50% + 100px);
+    transform: rotate(90deg);
+
 }
 
 .light {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    margin: 10px;
-    background-color: black; /* Default to black */
+    margin: 10px 0;
+    background-color: black;
     transition: background-color 0.9s;
+    border: 2px solid #777;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .red {
@@ -55,7 +93,7 @@ html, body {
 }
 
 .green {
-    background-color: rgb(13, 145, 13) !important;
+    background-color: rgb(87, 233, 100) !important;
 }
 
 .black {
