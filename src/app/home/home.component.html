@@ -1,0 +1,20 @@
+<body >
+    <div class="traffic-signal-container">
+      <div class="system-name">
+        <h1>Traffic Light Monitoring and Control</h1>
+      </div>
+      <div class="traffic-lights-row">
+        <div class="traffic-signal">
+          <div class="light" [ngClass]="{'red': lights.red1 === 1, 'yellow': false, 'green': false, 'black': lights.red1 === 0}"></div>
+          <div class="light" [ngClass]="{'red': false, 'yellow': lights.yellow1 === 1, 'green': false, 'black': lights.yellow1 === 0}"></div>
+          <div class="light" [ngClass]="{'red': false, 'yellow': false, 'green': lights.green1 === 1, 'black': lights.green1 === 0}"></div>
+        </div>
+        <div class="traffic-signal">
+          <div class="light" [ngClass]="{'red': lights.red2 === 1, 'yellow': false, 'green': false, 'black': lights.red2 === 0}"></div>
+          <div class="light" [ngClass]="{'red': false, 'yellow': lights.yellow2 === 1, 'green': false, 'black': lights.yellow2 === 0}"></div>
+          <div class="light" [ngClass]="{'red': false, 'yellow': false, 'green': lights.green2 === 1, 'black': lights.green2 === 0}"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+  
