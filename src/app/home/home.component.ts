@@ -11,6 +11,7 @@ export class HomeComponent implements OnInit,OnDestroy{
   lights:any;
   private intervalId: any;
   private subscription: Subscription = new Subscription();
+  status: any;
 
 constructor(private service :ServiceService){}
 
@@ -36,4 +37,11 @@ constructor(private service :ServiceService){}
     this.subscription.unsubscribe();
   }
 
+
+  getStatus(){
+    this.service.getSignals().subscribe((res)=>{
+      this.status=res.status;
+    })
+
+  }
 }

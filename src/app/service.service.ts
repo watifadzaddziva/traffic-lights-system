@@ -13,4 +13,8 @@ export class ServiceService {
   getSignals():Observable<any>{
     return this.http.get(`${this.baseUrl}/traffic_light_status`)
   }
+
+  getStatus():Observable<any>{
+    return this.http.get(`${this.baseUrl}/status`)
+  }
 }

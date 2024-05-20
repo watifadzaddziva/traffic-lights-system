@@ -16,21 +16,21 @@ html,body {
 
 .system-name {
     text-align: center;
-    margin-top: 70px;
+    margin-top: 50px;
     margin-bottom: 20px;
     font-family: Arial, sans-serif;
 }
 
 .intersection {
     position: relative;
-    width: 800px;
-    height: 550px;
-    background-color: #333;
+    width: 700px;
+    height: 500px;
+    background-color: #777;
 }
 
 .road {
     position: absolute;
-    background-color: #777;
+    background-color: #333;
 }
 
 .vertical-road {
@@ -62,12 +62,13 @@ html,body {
 }
 
 .traffic-signal-1 {
-    top: 20px; 
-    left: calc(50% - 110px); 
+    top: 15px; 
+    right:50px;
+    left: calc(50% - 120px); 
 }
 
 .traffic-signal-2 {
-    top: 100px; 
+    top: 70px; 
     left: calc(50% + 100px);
     transform: rotate(90deg);
 
