@@ -14,7 +14,12 @@ export class ServiceService {
     return this.http.get(`${this.baseUrl}/traffic_light_status`)
   }
 
-  Status(status:boolean):Observable<any>{
+  Status():Observable<any>{
+    return this.http.get(`${this.baseUrl}/status`)
+  }
+
+  Reset(status:boolean):Observable<any>{
     return this.http.get(`${this.baseUrl}/reset/${status}`)
   }
+
 }

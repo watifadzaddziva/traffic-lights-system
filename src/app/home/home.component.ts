@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit,OnDestroy{
 constructor(private service :ServiceService, private fb:UntypedFormBuilder){}
 
   ngOnInit(): void {
-
+    this.getStatus();
     this.fetchTrafficLightState();
     this.intervalId = setInterval(() => {
       this.fetchTrafficLightState();
@@ -44,14 +44,14 @@ constructor(private service :ServiceService, private fb:UntypedFormBuilder){}
 
 
   getStatus(){
-    this.service.getSignals().subscribe((res)=>{
+    this.service.Status().subscribe((res)=>{
       this.status=res.status;
     })
 
   }
 
   submit() {
-    this.service.Status(true).subscribe((res)=>{
+    this.service.Reset(true).subscribe((res)=>{
       console.log(res);
     })
     }
