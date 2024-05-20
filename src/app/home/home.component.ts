@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ServiceService } from '../service.service';
+import { FormBuilder, FormGroup, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -8,14 +9,18 @@ import { ServiceService } from '../service.service';
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit,OnDestroy{
+
   lights:any;
   private intervalId: any;
   private subscription: Subscription = new Subscription();
   status: any;
+  form = new UntypedFormGroup({});
 
-constructor(private service :ServiceService){}
+
+constructor(private service :ServiceService, private fb:UntypedFormBuilder){}
 
   ngOnInit(): void {
+
     this.fetchTrafficLightState();
     this.intervalId = setInterval(() => {
       this.fetchTrafficLightState();
@@ -44,4 +49,11 @@ constructor(private service :ServiceService){}
     })
 
   }
+
+  submit() {
+    this.service.Status(true).subscribe((res)=>{
+      console.log(res);
+    })
+    }
+
 }

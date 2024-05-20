@@ -1,10 +1,12 @@
 <body>
     <div class="traffic-signal-container">
         <div class="system-name">
-            <h3>Traffic Light Monitoring and Control</h3><br>
-            <h4>Status: {{this.status}}</h4>
+            <h4>Traffic Light Monitoring and Control System</h4>
+            <h5>Status: {{this.status}}</h5>
         </div>
         <div class="intersection">
+            <div class="label label-1">Intersection 1</div>
+            <div class="label label-2">Intersection 2</div>
             <div class="road vertical-road"></div>
             <div class="road horizontal-road"></div>
             <div class="traffic-signal traffic-signal-1">
@@ -17,6 +19,11 @@
                 <div class="light" [ngClass]="{'red': false, 'yellow': lights.yellow2 === 1, 'green': false, 'black': lights.yellow2 === 0}"></div>
                 <div class="light" [ngClass]="{'red': false, 'yellow': false, 'green': lights.green2 === 1, 'black': lights.green2 === 0}"></div>
             </div>
+        </div>
+        <div style="margin-top:5px">
+            <form [formGroup]="form" (ngSubmit)="submit()">
+            <button  type="submit" class="btn btn-secondary">Reset</button>
+        </form>
         </div>
     </div>
 </body>

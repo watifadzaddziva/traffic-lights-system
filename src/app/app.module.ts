@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ServiceService } from './service.service';
 import { HttpClientModule, provideHttpClient } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,9 @@ import { HomeComponent } from './home/home.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [ServiceService,provideHttpClient()],
   bootstrap: [AppComponent]

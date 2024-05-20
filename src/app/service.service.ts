@@ -14,7 +14,7 @@ export class ServiceService {
     return this.http.get(`${this.baseUrl}/traffic_light_status`)
   }
 
-  getStatus():Observable<any>{
-    return this.http.get(`${this.baseUrl}/status`)
+  Status(status:boolean):Observable<any>{
+    return this.http.post(`${this.baseUrl}/status`,status)
   }
 }

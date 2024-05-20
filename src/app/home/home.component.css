@@ -1,9 +1,9 @@
 html,body {
     margin: 0;
     padding: 0;
-    height: 100vh;
+    height: 90vh;
     width: 100%;
-    /* background-color:rgb(167, 161, 161); */
+    /* background-color:#615f5f; */
 
 }
 
@@ -16,15 +16,15 @@ html,body {
 
 .system-name {
     text-align: center;
-    margin-top: 50px;
-    margin-bottom: 20px;
+    margin-top: 25px;
+    margin-bottom: 10px;
     font-family: Arial, sans-serif;
 }
 
 .intersection {
     position: relative;
-    width: 700px;
-    height: 500px;
+    width: 600px;
+    height: 360px;
     background-color: #777;
 }
 
@@ -34,7 +34,7 @@ html,body {
 }
 
 .vertical-road {
-    width: 60px;
+    width: 40px;
     height: 100%;
     left: 50%;
     transform: translateX(-50%);
@@ -42,14 +42,14 @@ html,body {
 
 .horizontal-road {
     width: 100%;
-    height: 60px;
+    height: 40px;
     top: 50%;
     transform: translateY(-50%);
 }
 
 .traffic-signal {
-    width: 80px;
-    height: 200px;
+    width: 67px;
+    height: 160px;
     background-color: #333;
     border-radius: 10px;
     display: flex;
@@ -62,13 +62,13 @@ html,body {
 }
 
 .traffic-signal-1 {
-    top: 15px; 
+    /* top: 10px;  */
     right:50px;
-    left: calc(50% - 120px); 
+    left: calc(50% - 110px); 
 }
 
 .traffic-signal-2 {
-    top: 70px; 
+    top: 44px; 
     left: calc(50% + 100px);
     transform: rotate(90deg);
 
@@ -84,6 +84,31 @@ html,body {
     border: 2px solid #777;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
+
+.label {
+    position: absolute;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    color: white;
+    background-color: #333;
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    white-space: nowrap; 
+}
+
+.label-1 {
+    top: 7px;
+    left: calc(50% - 200px); 
+    transform: translateX(-50%);
+}
+
+.label-2 {
+    top: 7px;
+    left: calc(50% + 200px); 
+    transform: translateX(-50%);
+}
+
 
 .red {
     background-color: red !important;
