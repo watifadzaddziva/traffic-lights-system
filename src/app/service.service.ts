@@ -15,6 +15,6 @@ export class ServiceService {
   }
 
   Status(status:boolean):Observable<any>{
-    return this.http.post(`${this.baseUrl}/status`,status)
+    return this.http.get(`${this.baseUrl}/status/${status}`)
   }
 }
