@@ -24,6 +24,7 @@ constructor(private service :ServiceService, private fb:UntypedFormBuilder){}
     this.fetchTrafficLightState();
     this.intervalId = setInterval(() => {
       this.fetchTrafficLightState();
+      this.getStatus();
     }, 1000);
   }
 
