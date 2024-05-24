@@ -15,7 +15,8 @@ export class HomeComponent implements OnInit,OnDestroy{
   private subscription: Subscription = new Subscription();
   status: any;
   form = new UntypedFormGroup({});
-
+  showSuccessMessage = false;
+  showErrorMessage = false;
 
 constructor(private service :ServiceService, private fb:UntypedFormBuilder){}
 
@@ -52,9 +53,20 @@ constructor(private service :ServiceService, private fb:UntypedFormBuilder){}
   }
 
   submit() {
-    this.service.Reset(true).subscribe((res)=>{
-      console.log(res);
-    })
-    }
+    this.service.Reset(true).subscribe(
+      (res) => {
+        this.showSuccessMessage = true;
+        setTimeout(() => {
+          this.showSuccessMessage = false;
+        }, 3000); 
+      },
+      (error) => {
+        this.showErrorMessage = true;
+        setTimeout(() => {
+          this.showErrorMessage = false;
+        }, 3000);
+      }
+    );}
+
 
 }

@@ -1,29 +1,53 @@
 <body>
     <div class="traffic-signal-container">
         <div class="system-name">
-            <h4>Traffic Light Monitoring and Control System</h4>
-            <h5>Status: {{this.status}}</h5>
-        </div>
-        <div class="intersection">
-            <div class="label label-1">Intersection 1</div>
-            <div class="label label-2">Intersection 2</div>
-            <div class="road vertical-road"></div>
-            <div class="road horizontal-road"></div>
-            <div class="traffic-signal traffic-signal-1">
-                <div class="light" [ngClass]="{'red': lights.red1 === 1, 'yellow': false, 'green': false, 'black': lights.red1 === 0}"></div>
-                <div class="light" [ngClass]="{'red': false, 'yellow': lights.yellow1 === 1, 'green': false, 'black': lights.yellow1 === 0}"></div>
-                <div class="light" [ngClass]="{'red': false, 'yellow': false, 'green': lights.green1 === 1, 'black': lights.green1 === 0}"></div>
+            <h4>Traffic Light Monitoring and Control System</h4><br>
+            <h5 style="color:rgb(105, 28, 176)">Status: {{this.status}}</h5>
+        </div><br>
+        <div class="intersections-container">
+            <div class="intersection">
+                <div class="intersection-label">Intersection 1</div>
+                <div class="road vertical-road">
+                </div>
+                <div class="road horizontal-road">
+                </div>
+                <div class="traffic-signal traffic-signal-1">
+                    <div class="light" [ngClass]="{'red': lights.red1 === 1, 'yellow': false, 'green': false, 'black': lights.red1 === 0}"></div>
+                    <div class="light" [ngClass]="{'red': false, 'yellow': lights.yellow1 === 1, 'green': false, 'black': lights.yellow1 === 0}"></div>
+                    <div class="light" [ngClass]="{'red': false, 'yellow': false, 'green': lights.green1 === 1, 'black': lights.green1 === 0}"></div>
+                </div>
+                <div class="traffic-signal traffic-signal-2">
+                    <div class="light" [ngClass]="{'red': lights.red2 === 1, 'yellow': false, 'green': false, 'black': lights.red2 === 0}"></div>
+                    <div class="light" [ngClass]="{'red': false, 'yellow': lights.yellow2 === 1, 'green': false, 'black': lights.yellow2 === 0}"></div>
+                    <div class="light" [ngClass]="{'red': false, 'yellow': false, 'green': lights.green2 === 1, 'black': lights.green2 === 0}"></div>
+                </div>
             </div>
-            <div class="traffic-signal traffic-signal-2">
-                <div class="light" [ngClass]="{'red': lights.red2 === 1, 'yellow': false, 'green': false, 'black': lights.red2 === 0}"></div>
-                <div class="light" [ngClass]="{'red': false, 'yellow': lights.yellow2 === 1, 'green': false, 'black': lights.yellow2 === 0}"></div>
-                <div class="light" [ngClass]="{'red': false, 'yellow': false, 'green': lights.green2 === 1, 'black': lights.green2 === 0}"></div>
+            <div class="intersection">
+                <div class="intersection-label">Intersection 2</div>
+                <div class="road vertical-road"></div>
+                <div class="road horizontal-road"></div>
+                <div class="traffic-signal traffic-signal-1">
+                    <div class="light" [ngClass]="{'red': lights.red3 === 1, 'yellow': false, 'green': false, 'black': lights.red3 === 0}"></div>
+                    <div class="light" [ngClass]="{'red': false, 'yellow': lights.yellow3 === 1, 'green': false, 'black': lights.yellow3 === 0}"></div>
+                    <div class="light" [ngClass]="{'red': false, 'yellow': false, 'green': lights.green3 === 1, 'black': lights.green3 === 0}"></div>
+                    </div>
+                <div class="traffic-signal traffic-signal-2">
+                    <div class="light" [ngClass]="{'red': lights.red4 === 1, 'yellow': false, 'green': false, 'black': lights.red4 === 0}"></div>
+                    <div class="light" [ngClass]="{'red': false, 'yellow': lights.yellow4 === 1, 'green': false, 'black': lights.yellow4 === 0}"></div>
+                    <div class="light" [ngClass]="{'red': false, 'yellow': false, 'green': lights.green4 === 1, 'black': lights.green4 === 0}"></div>
+                </div>
             </div>
         </div>
         <div style="margin-top:5px">
             <form [formGroup]="form" (ngSubmit)="submit()">
-            <button  type="submit" class="btn btn-secondary">Reset</button>
-        </form>
+                <button type="submit" class="btn btn-secondary">Reset</button>
+                <div class="alert alert-success" role="alert" *ngIf="showSuccessMessage">
+                  Success! Your request has been processed.
+                </div>
+                <div class="alert alert-danger" role="alert" *ngIf="showErrorMessage">
+                  Error! Something went wrong.
+                </div>
+              </form>
         </div>
     </div>
 </body>
